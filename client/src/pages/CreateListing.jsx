@@ -1,10 +1,5 @@
 import { useState } from 'react';
-import {
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytesResumable,
-} from 'firebase/storage';
+import {getDownloadURL, getStorage, ref, uploadBytesResumable, } from 'firebase/storage';
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -51,7 +46,7 @@ export default function CreateListing() {
           setUploading(false);
         })
         .catch((err) => {
-          setImageUploadError('Image upload failed (2 mb max per image)');
+          setImageUploadError('Image upload failed (5 mb max per image)');
           setUploading(false);
         });
     } else {
@@ -282,7 +277,7 @@ export default function CreateListing() {
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
                 {formData.type === 'rent' && (
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs'>(PKR / month)</span>
                 )}
               </div>
             </div>
@@ -302,7 +297,7 @@ export default function CreateListing() {
                   <p>Discounted price</p>
 
                   {formData.type === 'rent' && (
-                    <span className='text-xs'>($ / month)</span>
+                    <span className='text-xs'>(PKR / month)</span>
                   )}
                 </div>
               </div>
