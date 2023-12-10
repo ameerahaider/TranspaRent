@@ -22,7 +22,7 @@ export default function CreateListing() {
     type: 'rent',
     bedrooms: 1,
     bathrooms: 1,
-    regularPrice: 50,
+    regularPrice: 10000,
     discountPrice: 0,
     offer: false,
     parking: false,
@@ -288,7 +288,7 @@ export default function CreateListing() {
               <input
                 type='number'
                 id='regularPrice'
-                min='50'
+                min='10000'
                 max='10000000'
                 required
                 className='p-3 border border-gray-300 rounded-lg'
