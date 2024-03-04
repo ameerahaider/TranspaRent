@@ -8,10 +8,11 @@ import cookieParser from 'cookie-parser';
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO).then(() => {
+mongoose.connect("mongodb+srv://usman:usman@transparent.wujmeog.mongodb.net/TranspaRent?retryWrites=true&w=majority").then(() => {
     console.log('Connected to MongoDB!');
 })
 .catch((err) => {
+    console.log("Database Not connected");
     console.log(err);
 });
 

@@ -14,6 +14,22 @@ const listingSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        location:{
+            type: String,
+            required: true,
+        },
+        propertyType:{
+            type: Number,
+            required: true,
+        },
+        size:{
+            type: Number,
+            required: true,
+        },
+        areaType:{
+            type: String,
+            required: true,
+        },
         regularPrice:{
             type: Number,
             required: true,
