@@ -21,6 +21,7 @@ export default function Listing() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [userDetails, setUserDetails] = useState(null);
 //  const [contact, setContact] = useState(false);
   const params = useParams();
   const { currentUser } = useSelector((state) => state.user);
@@ -37,6 +38,7 @@ export default function Listing() {
           return;
         }
         setListing(data);
+        await fetchUserDetails(data._id); 
         setLoading(false);
         setError(false);
       } catch (error) {
@@ -47,13 +49,26 @@ export default function Listing() {
     fetchListing();
   }, [params.listingId]);
 
+
+  const fetchUserDetails = async (_id) => {
+    try {
+      const res = await fetch(`/api/user/get/${_id}`);
+      const data = await res.json();
+      console.log('User details response:', data); 
+      setUserDetails(data);
+    } catch (error) {
+      console.error('Error fetching user details:', error.message);
+    }
+  };
+  
+
   return (
     <main>
       {loading && <p className='text-center my-7 text-2xl'>Loading...</p>}
       {error && (
         <p className='text-center my-7 text-2xl'>Something went wrong!</p>
       )}
-      {listing && !loading && !error && (
+      {listing && userDetails && !loading && !error && (
         <div>
           <Swiper navigation>
             {listing.imageUrls.map((url) => (
@@ -133,6 +148,9 @@ export default function Listing() {
                 {listing.furnished ? 'Furnished' : 'Unfurnished'}
               </li>
             </ul>
+            <p className='text-slate-700 font-semibold text-center mt-6'>
+              Added by: {userDetails.username}
+            </p>
               <button
                 className='bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 p-3'
               >

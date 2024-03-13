@@ -10,6 +10,12 @@ export const test = (req,res) => {
 };
 
 export const updateUser = async (req, res, next) => {
+    ///////
+//    console.log('update user id:', req.params.id);
+    //  console.log('update params:', req.params)
+
+        /////
+
     if(req.user.id !== req.params.id) return next(errorHandler(401, "You can only update your own account"));
     try {
         if(req.body.password) {
@@ -27,6 +33,7 @@ export const updateUser = async (req, res, next) => {
 
         const {password, ...rest} = updatedUser._doc;
         res.status(200).json(rest);
+        
 
     } catch (error) {
         next (error)
@@ -58,3 +65,38 @@ export const getUserListings = async (req, res, next) => {
         return next(errorHandler(401, 'You can only view your own listings!' ));
     }
 }
+
+
+export const getUserById = async (req, res, next) => {
+    try {
+    //  console.log('user id:', req.params.id);
+      const userId = req.params.id;
+  //    console.log('Before finding user');
+      const user = await User.findById(req.user.id);
+//      console.log('After finding user:', user);
+      
+
+
+      if (!user) {
+        return res.status(404).json({ success: false, message: 'User not found' });
+      }
+  
+      const { password, ...userData } = user._doc;
+      res.status(200).json(userData);
+    } catch (error) {
+      next(error);
+    }
+  };
+  
+      
+
+
+export const getUserListingsById = async (req, res, next) => {
+    try {
+      const listings = await Listing.find({ userRef: req.params.id });
+      res.status(200).json(listings);
+    } catch (error) {
+      next(error);
+    }
+  };
+  
