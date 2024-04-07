@@ -2,7 +2,7 @@ import User from "../models/user.model.js";
 import bcryptjs from 'bcryptjs';
 import { errorHandler } from "../utils/error.js";
 import jwt from 'jsonwebtoken';
-let currentIndex = 0;
+let currentIndex = 7;
 
 
 export const signup = async (req,res, next) => {

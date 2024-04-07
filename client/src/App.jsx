@@ -11,7 +11,9 @@ import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
-
+import Contract from './pages/Contract';
+import Contracts from './pages/Contracts';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -28,8 +30,11 @@ export default function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-listing" element={<CreateListing />} />
           <Route path="/update-listing/:listingId" element={<UpdateListing />} />
+          <Route path="/contract/:listingId/:userId" element={<Contract />} />
+          <Route path="/contracts" element={<Contracts />} />
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

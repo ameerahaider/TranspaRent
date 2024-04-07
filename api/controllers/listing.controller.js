@@ -1,5 +1,7 @@
 import Listing from "../models/listing.model.js";
 import { errorHandler } from "../utils/error.js";
+import User from "../models/user.model.js";
+
 
 export const createListing = async (req, res, next) => {
     try {
@@ -115,3 +117,76 @@ export const createListing = async (req, res, next) => {
     }
   };
 
+  export const getListingWithUser = async (req, res, next) => {
+    try {
+      const listingId = req.params.id;
+  
+      // Find the listing by its ID
+      const listing = await Listing.findById(listingId);
+  
+      if (!listing) {
+        return next(errorHandler(404, 'Listing not found!'));
+      }
+  
+      // Find the user who owns the listing
+      const user = await User.findById(listing.userRef);
+  
+      if (!user) {
+        return next(errorHandler(404, 'User not found!'));
+      }
+  
+      // Construct the response object
+      const listingWithUser = {
+        listing,
+        user
+      };
+  
+      // Send the response
+      res.status(200).json(listingWithUser);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+
+  export const updateRentedField = async (req, res, next) => {
+    const listingId = req.params.id;
+    const { rented } = req.body; // Extract rented field from request body
+    console.log(rented);
+
+    try {
+      const listing = await Listing.findById(listingId);
+      if (!listing) {
+        return next(errorHandler(404, 'Listing not found!'));
+      }
+      
+      // Update rented field
+      listing.rented = true;
+      const updatedListing = await listing.save();
+  
+      res.status(200).json(updatedListing);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  export const updateRentedFieldFalse = async (req, res, next) => {
+    const listingId = req.params.id;
+    const { rented } = req.body; // Extract rented field from request body
+    console.log(rented);
+
+    try {
+      const listing = await Listing.findById(listingId);
+      if (!listing) {
+        return next(errorHandler(404, 'Listing not found!'));
+      }
+      
+      // Update rented field
+      listing.rented = false;
+      const updatedListing = await listing.save();
+  
+      res.status(200).json(updatedListing);
+    } catch (error) {
+      next(error);
+    }
+  };

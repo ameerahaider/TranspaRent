@@ -70,9 +70,12 @@ const listingSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        rented: { // New field
+            type: Boolean,
+            default: false // Default value is false
+        }
     }, {timestamps: true}
 )
-
 
 const Listing = mongoose.model('Listing', listingSchema);
 
