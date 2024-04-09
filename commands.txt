@@ -2,5 +2,3 @@ cd Blockchain // truffle migrate --reset --config ./truffle-config.cjs
 cd AI // python flaskapp.py
 cd Client // npm run dev
 npm run dev
-
-command push 
