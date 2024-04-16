@@ -144,6 +144,7 @@ export default function Contracts() {
       setSelectedContractDetails({
         propertyID: details.propertyID,
         tenant: details.tenant,
+        tenantUsername: details.tenantUsername,
         rentAmount: details.rentAmount.toString(),
         securityDeposit: details.securityDeposit.toString(),
         leaseDuration: details.leaseDuration.toString(),
@@ -166,6 +167,7 @@ export default function Contracts() {
       setSelectedTenantContractDetails({
         propertyID: details.propertyID,
         landlord: details.landlord,
+        landlordUsername: details.landlordUsername,
         rentAmount: details.rentAmount.toString(),
         securityDeposit: details.securityDeposit.toString(),
         leaseDuration: details.leaseDuration.toString(),
@@ -377,7 +379,8 @@ export default function Contracts() {
             {selectedContractDetails && (
               <>
                 <p><strong>Property ID:</strong> {selectedContractDetails.propertyID}</p>
-                <p><strong>Tenant:</strong> {selectedContractDetails.tenant}</p>
+                <p><strong>Tenant:</strong> {selectedContractDetails.tenantUsername}</p>
+                <p><strong>Tenant ID:</strong> {selectedContractDetails.tenant}</p>
                 <p><strong>Rent Amount:</strong> {selectedContractDetails.rentAmount}</p>
                 <p><strong>Security Deposit:</strong> {selectedContractDetails.securityDeposit}</p>
                 <p><strong>Lease Duration:</strong> {selectedContractDetails.leaseDuration} Month</p>
@@ -397,7 +400,8 @@ export default function Contracts() {
             {selectedTenantContractDetails && (
               <>
                 <p><strong>Property ID:</strong> {selectedTenantContractDetails.propertyID}</p>
-                <p><strong>Landlord:</strong> {selectedTenantContractDetails.landlord}</p>
+                <p><strong>Landlord:</strong> {selectedTenantContractDetails.landlordUsername}</p>
+                <p><strong>Landlord ID:</strong> {selectedTenantContractDetails.landlord}</p>
                 <p><strong>Rent Amount:</strong> {selectedTenantContractDetails.rentAmount}</p>
                 <p><strong>Security Deposit:</strong> {selectedTenantContractDetails.securityDeposit}</p>
                 <p><strong>Lease Duration:</strong> {selectedTenantContractDetails.leaseDuration} Month</p>
@@ -515,7 +519,7 @@ export default function Contracts() {
           <thead>
             <tr>
               <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Property ID</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Tenant ID</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Tenant</th>
               <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Status</th> {/* New column for Status */}
               <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>View Details</th>
               <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>View Disputes</th>
@@ -527,7 +531,7 @@ export default function Contracts() {
             {LandlordTable.map((contract, index) => (
               <tr key={index}>
                 <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{contract.propertyID}</td>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{contract.tenant}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{contract.tenantUsername}</td>
                 <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{convertStatus(contract.status)}</td> {/* Display status */}
                 <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>
                   <button onClick={() => handleLandlordDetailsClick(contract.tenant, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Details</button>
@@ -557,7 +561,7 @@ export default function Contracts() {
           <thead>
             <tr>
               <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Property ID</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Landlord ID</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Landlord</th>
               <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Status</th> {/* New column for Status */}
               <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>View Details</th>
               <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>View Disputes</th>
@@ -569,7 +573,7 @@ export default function Contracts() {
             {TenantTable.map((contract, index) => (
               <tr key={index}>
                 <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{contract.propertyID}</td>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{contract.landlord}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{contract.landlordUsername}</td>
                 <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{convertStatus(contract.status)}</td> {/* Display status */}
                 <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}><button onClick={() => handleTenantDetailsClick(contract.landlord, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Details</button></td>
                 <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}><button onClick={() => handleViewDisputesTenant(contract.landlord, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Disputes</button></td>

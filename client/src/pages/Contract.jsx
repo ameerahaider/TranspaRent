@@ -184,6 +184,8 @@ export default function Contract() {
       const gasEstimate = await contract.methods.createRentalAgreement(
         accounts[landlord.index],
         accounts[currentUser.index],
+        landlord.username,
+        currentUser.username,
         rentAmountWeiStr,
         securityDepositWeiStr,
         leaseDurationStr,
@@ -194,6 +196,8 @@ export default function Contract() {
       const response = await contract.methods.createRentalAgreement(
         accounts[landlord.index],
         accounts[currentUser.index],
+        landlord.username,
+        currentUser.username,
         rentAmountWeiStr,
         securityDepositWeiStr,
         leaseDurationStr,
