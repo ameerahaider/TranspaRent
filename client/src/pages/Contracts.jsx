@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 import Web3 from 'web3';
 import RentalContract from "../contracts/AgreementFactory.json"; // Make sure this path is correct
 import DisputeContract from "../contracts/DisputeResolution.json"; // Make sure this path is correct
+import PaymentContract from "../contracts/Payment.json"; // Make sure this path is correct
 
 export default function Contracts() {
   const { currentUser, loading, error } = useSelector((state) => state.user);
   const [contract1, setContract1] = useState(null);
   const [contract2, setContract2] = useState(null);
+  const [contract3, setContract3] = useState(null);
   const [accounts, setAccounts] = useState([]);
   const [LandlordTable, setLandlordTable] = useState([]);
   const [TenantTable, setTenantTable] = useState([]);
@@ -54,6 +56,7 @@ export default function Contracts() {
         const networkId = await web3.eth.net.getId();
         const deployedNetwork1 = RentalContract.networks[networkId];
         const deployedNetwork2 = DisputeContract.networks[networkId];
+        const deployedNetwork3 = PaymentContract.networks[networkId];
 
 
         if (!deployedNetwork1) {
@@ -61,6 +64,10 @@ export default function Contracts() {
         }
 
         if (!deployedNetwork2) {
+          throw new Error("Contract network not found");
+        }
+
+        if (!deployedNetwork3) {
           throw new Error("Contract network not found");
         }
 
@@ -74,10 +81,16 @@ export default function Contracts() {
           deployedNetwork2.address
         );
 
+        const contractInstance3 = new web3.eth.Contract(
+          PaymentContract.abi,
+          deployedNetwork3.address
+        );
+
         const accs = await web3.eth.getAccounts();
         setAccounts(accs);
         setContract1(contractInstance1);
         setContract2(contractInstance2);
+        setContract3(contractInstance3);
         console.log("doneeee");
       } catch (error) {
         console.error("Error initializing Web3:", error);
@@ -185,7 +198,8 @@ export default function Contracts() {
     try {
       await contract1.methods.terminateAgreement(tenant, accounts[currentUser.index], propertyID).send({ from: accounts[currentUser.index] });
       alert("Agreement terminated successfully!");
-
+      //const response = await contract3.methods.disapprovePayment(tenant, accounts[currentUser.index], propertyID).send({ from: accounts[currentUser.index] });
+      //console.log("Payment disapproved successfully. Transaction hash:", response.transactionHash);
       // Update rented field in the listing model
       const responseListing = await fetch(`/api/listing/update/rentedFalse/${propertyID}`, {
         method: 'PUT',
@@ -287,6 +301,8 @@ export default function Contracts() {
     try {
       const response = await contract1.methods.approveAgreement(tenant, accounts[currentUser.index], propertyID).send({ from: accounts[currentUser.index] });
       console.log("Response from approveAgreement:", response); // Log the response
+      const response2 = await contract3.methods.makePayment(tenant, accounts[currentUser.index], propertyID).send({ from: accounts[currentUser.index] });
+      console.log("Payment disapproved successfully. Transaction hash:", response2.transactionHash);
 
       alert("Agreement Approved successfully!");
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Web3 from "web3";
 import RentalContract from "../contracts/AgreementFactory.json"; // Make sure this path is correct
+import PaymentContract from "../contracts/Payment.json"; // Make sure this path is correct
 import BN from 'bn.js';
 
 export default function Contract() {
@@ -31,6 +32,9 @@ export default function Contract() {
   const [showPaymentSection, setShowPaymentSection] = useState(false);
   const [showApprovalButtons, setShowApprovalButtons] = useState(false);
 
+  //new
+  const [contract2, setContract2] = useState(null);
+
 
   useEffect(() => {
     const initWeb3 = async () => {
@@ -38,8 +42,13 @@ export default function Contract() {
         const web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:7545");
         const networkId = await web3.eth.net.getId();
         const deployedNetwork = RentalContract.networks[networkId];
+        const deployedNetwork2 = PaymentContract.networks[networkId];
 
         if (!deployedNetwork) {
+          throw new Error("Contract network not found");
+        }
+
+        if (!deployedNetwork2) {
           throw new Error("Contract network not found");
         }
 
@@ -48,9 +57,15 @@ export default function Contract() {
           deployedNetwork.address
         );
 
+        const contractInstance2 = new web3.eth.Contract(
+          PaymentContract.abi,
+          deployedNetwork2.address
+        );
+
         const accs = await web3.eth.getAccounts();
         setAccounts(accs);
         setContract(contractInstance);
+        setContract2(contractInstance2);
         console.log("doneeee");
         // setCurrentUser(accs[0]); // Assuming the first account is the current user
       } catch (error) {
@@ -205,7 +220,11 @@ export default function Contract() {
         listingIdStr
       ).send({ from: accounts[currentUser.index], gas: gasEstimate });
 
+      const gasEstimate2 = await contract2.methods.createPayment(accounts[currentUser.index], accounts[landlord.index], listingIdStr, securityDepositWeiStr).estimateGas({ from: accounts[currentUser.index] });
+      const response2 = await contract2.methods.createPayment(accounts[currentUser.index], accounts[landlord.index], listingIdStr, securityDepositWeiStr).send({ from: accounts[currentUser.index], gas: gasEstimate2});
+
       console.log("Agreement initiated successfully. Transaction hash:", response.transactionHash);
+      console.log("Payment initiated successfully. Transaction hash:", response2.transactionHash);
       window.alert("Agreement initiated successfully.");
       setContractSubmitted(true);
       setShowPaymentSection(true);
@@ -283,8 +302,9 @@ export default function Contract() {
   
       // Approve the agreement
       const responseContract = await contract.methods.approveAgreement(accounts[currentUser.index], accounts[landlord.index], listingIdStr).send({ from: accounts[currentUser.index] });
-  
+      const responseContract2 = await contract2.methods.makePayment(accounts[currentUser.index], accounts[landlord.index], listingIdStr).send({ from: accounts[currentUser.index] });
       console.log("Agreement approved successfully. Transaction hash:", responseContract.transactionHash);
+      console.log("Payment approved successfully. Transaction hash:", responseContract2.transactionHash);
       window.alert("Agreement approved successfully.");
   
     } catch (error) {
@@ -301,8 +321,10 @@ export default function Contract() {
 
      // const gasEstimate = await contract.methods.disapproveAgreement(accounts[currentUser.index], accounts[landlord.index]).estimateGas();
       const response = await contract.methods.disapproveAgreement(accounts[currentUser.index], accounts[landlord.index], listingIdStr).send({ from: accounts[currentUser.index]});
+      const response2 = await contract2.methods.disapprovePayment(accounts[currentUser.index], accounts[landlord.index], listingIdStr).send({ from: accounts[currentUser.index] });
 
       console.log("Agreement disapproved successfully. Transaction hash:", response.transactionHash);
+      console.log("Payment disapproved successfully. Transaction hash:", response2.transactionHash);
       window.alert("Agreement disapproved successfully.");
     } catch (error) {
       console.error("Error disapproved agreement:", error);
