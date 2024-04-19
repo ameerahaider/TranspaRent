@@ -13,21 +13,24 @@ contract AgreementFactory {
         Terminated
     }
 
-    struct Contract {
-        uint256 ID;
-        address landlord;
-        address tenant;
-        uint256 rentAmount;
-        uint256 securityDeposit;
-        uint256 leaseDuration;
-        uint256 startDate;
-        uint256 terminationDate;
-        string propertyID; // New propertyID field
-        AgreementStatus status;
-        string[] terms; // Dynamic array of strings for terms
-        bool tenantApproved; // Tenant approval status
-        bool landlordApproved; // Landlord approval status
-    }
+struct Contract {
+    uint256 ID;
+    address landlord;
+    address tenant;
+    string landlordUsername;  // New field for landlord's username
+    string tenantUsername;    // New field for tenant's username
+    uint256 rentAmount;
+    uint256 securityDeposit;
+    uint256 leaseDuration;
+    uint256 startDate;
+    uint256 terminationDate;
+    string propertyID;
+    AgreementStatus status;
+    string[] terms;
+    bool tenantApproved;
+    bool landlordApproved;
+}
+
 
     Contract[] public contractRegistry;
     DisputeResolution public disputeResolutionContract;
@@ -43,6 +46,8 @@ contract AgreementFactory {
     function createRentalAgreement(
         address _landlord,
         address _tenant,
+        string memory _landlordUsername,
+        string memory _tenantUsername,
         uint256 _rentAmount,
         uint256 _securityDeposit,
         uint256 _leaseDuration,
@@ -60,7 +65,10 @@ contract AgreementFactory {
                 revert("Similar contract already pending");
             }
             
-            if (contractRegistry[i].status == AgreementStatus.Terminated){
+            if (contractRegistry[i].landlord == _landlord &&
+                contractRegistry[i].tenant == _tenant &&
+                keccak256(abi.encodePacked(contractRegistry[i].propertyID)) == keccak256(abi.encodePacked(_propertyID)) &&
+                contractRegistry[i].status == AgreementStatus.Terminated){
 
                 contractRegistry[i].rentAmount = _rentAmount;
                 contractRegistry[i].securityDeposit = _securityDeposit;
@@ -78,6 +86,8 @@ contract AgreementFactory {
         newAgreement.ID = contractRegistry.length - 1;
         newAgreement.landlord = _landlord;
         newAgreement.tenant = _tenant;
+        newAgreement.landlordUsername = _landlordUsername; // Set landlord's username
+        newAgreement.tenantUsername = _tenantUsername;     // Set tenant's username
         newAgreement.rentAmount = _rentAmount;
         newAgreement.securityDeposit = _securityDeposit;
         newAgreement.leaseDuration = _leaseDuration;
@@ -226,134 +236,6 @@ function approveAgreement(address _tenant, address _landlord, string memory _pro
         revert("Contract not found");
     }
 
-    function getContractRentAmount(
-        address _tenant,
-        address _landlord,
-        string memory _propertyID
-    ) external view returns (uint256) {
-        for (uint i = 0; i < contractRegistry.length; i++) {
-            if (
-                contractRegistry[i].tenant == _tenant &&
-                contractRegistry[i].landlord == _landlord &&
-                keccak256(abi.encodePacked(contractRegistry[i].propertyID)) == keccak256(abi.encodePacked(_propertyID))
-            ) {
-                return contractRegistry[i].rentAmount;
-            }
-        }
-        revert("Contract not found");
-    }
-
-    function getContractSecurityDeposit(
-        address _tenant,
-        address _landlord,
-        string memory _propertyID
-    ) external view returns (uint256) {
-        for (uint i = 0; i < contractRegistry.length; i++) {
-            if (
-                contractRegistry[i].tenant == _tenant &&
-                contractRegistry[i].landlord == _landlord &&
-                keccak256(abi.encodePacked(contractRegistry[i].propertyID)) == keccak256(abi.encodePacked(_propertyID))
-            ) {
-                return contractRegistry[i].securityDeposit;
-            }
-        }
-        revert("Contract not found");
-    }
-    function getContractLeaseDuration(
-        address _tenant,
-        address _landlord,
-        string memory _propertyID
-    ) external view returns (uint256) {
-        for (uint i = 0; i < contractRegistry.length; i++) {
-            if (
-                contractRegistry[i].tenant == _tenant &&
-                contractRegistry[i].landlord == _landlord &&
-                keccak256(abi.encodePacked(contractRegistry[i].propertyID)) == keccak256(abi.encodePacked(_propertyID))
-            ) {
-                return contractRegistry[i].leaseDuration;
-            }
-        }
-        revert("Contract not found");
-    }
-    function getContractStartDate(
-        address _tenant,
-        address _landlord,
-        string memory _propertyID
-    ) external view returns (uint256) {
-        for (uint i = 0; i < contractRegistry.length; i++) {
-            if (
-                contractRegistry[i].tenant == _tenant &&
-                contractRegistry[i].landlord == _landlord &&
-                keccak256(abi.encodePacked(contractRegistry[i].propertyID)) == keccak256(abi.encodePacked(_propertyID))
-            ) {
-                return contractRegistry[i].startDate;
-            }
-        }
-        revert("Contract not found");
-    }
-
-    function getContractTerminationDate(
-        address _tenant,
-        address _landlord,
-        string memory _propertyID
-    ) external view returns (uint256) {
-        for (uint i = 0; i < contractRegistry.length; i++) {
-            if (
-                contractRegistry[i].tenant == _tenant &&
-                contractRegistry[i].landlord == _landlord &&
-                keccak256(abi.encodePacked(contractRegistry[i].propertyID)) == keccak256(abi.encodePacked(_propertyID))
-            ) {
-                return contractRegistry[i].terminationDate;
-            }
-        }
-        revert("Contract not found");
-    }
-    
-    function getContractPropertyID(
-        address _tenant,
-        address _landlord,
-        string memory _propertyID
-    ) external view returns (string memory) {
-        for (uint i = 0; i < contractRegistry.length; i++) {
-            if (
-                contractRegistry[i].tenant == _tenant &&
-                contractRegistry[i].landlord == _landlord &&
-                keccak256(abi.encodePacked(contractRegistry[i].propertyID)) == keccak256(abi.encodePacked(_propertyID))
-            ) {
-                return contractRegistry[i].propertyID;
-            }
-        }
-        revert("Contract not found");
-    }
-    function getContractStatus(
-        address _tenant,
-        address _landlord,
-        string memory _propertyID
-    ) external view returns (string memory) {
-        for (uint i = 0; i < contractRegistry.length; i++) {
-            if (
-                contractRegistry[i].tenant == _tenant &&
-                contractRegistry[i].landlord == _landlord &&
-                keccak256(abi.encodePacked(contractRegistry[i].propertyID)) == keccak256(abi.encodePacked(_propertyID))
-            ) {
-                if (contractRegistry[i].status == AgreementStatus.Pending) {
-                    return "Pending";
-                } else if (
-                    contractRegistry[i].status == AgreementStatus.Active
-                ) {
-                    return "Active";
-                } else if (
-                    contractRegistry[i].status == AgreementStatus.Terminated
-                ) {
-                    return "Terminated";
-                } else {
-                    return "Error";
-                }
-            }
-        }
-        revert("Contract not found");
-    }
-
     function getContractDetails(
         address _tenant,
         address _landlord,
@@ -383,11 +265,6 @@ function approveAgreement(address _tenant, address _landlord, string memory _pro
         return disputeResolutionContract.getDisputesForAgreement(_agreementID);
     }
 
-    // ********************************************** Registry Functions
-
-    function getContractRegistryLength() external view returns (uint256) {
-        return contractRegistry.length;
-    }
 
 function getLandlordsContracts(address _landlordAddress) external view returns (Contract[] memory) {
     Contract[] memory result = new Contract[](contractRegistry.length);
