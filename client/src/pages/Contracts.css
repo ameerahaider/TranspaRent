@@ -1,0 +1,56 @@
+/* Contracts.css */
+
+/* Shared styles for tables */
+.contract-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; /* Add some margin between tables */
+  }
+  
+  .contract-table th, .contract-table td {
+    border: 1px solid #ddd;
+    padding: 12px; /* Increase padding for better spacing */
+    text-align: left;
+  }
+  
+  /* Header styles */
+  .contract-table th {
+    background-color: #f97316;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Zebra striping */
+  .contract-table tr:nth-child(even) {
+    background-color: #1f2937;
+  }
+  
+  /* Hover effect */
+  .contract-table tr:hover {
+    background-color: #f99f56;
+  }
+  
+  /* Button styles */
+  .contract-table button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px; /* Increase padding for better clickability */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  /* Disabled button styles */
+  .contract-table button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Button hover effect */
+  .contract-table button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+
+
+  

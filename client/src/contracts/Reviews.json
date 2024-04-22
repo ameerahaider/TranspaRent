@@ -148,7 +148,7 @@
   "sourceMap": "89:1354:5:-:0;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "89:1354:5:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;89:1354:5;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;927:192;;;997:10;89:1354;;927:192;;;89:1354;;;;927:192;;89:1354;;;;;927:192;;;1092:15;;89:1354;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;89:1354:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;89:1354:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;89:1354:5;;;;;-1:-1:-1;;;89:1354:5;;;;;;;;-1:-1:-1;;;89:1354:5;;;;;;;;;-1:-1:-1;;;89:1354:5;;;;;;;;;;;;;-1:-1:-1;;;89:1354:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;548:28;89:1354;;;;;;;;;;;;;;;;;;;;;;696:16;89:1354;717:9;;89:1354;;;;;;;;770:6:6;;89:1354:5;;;696:16;89:1354;;;;-1:-1:-1;;;89:1354:5;;696:16;89:1354;;;;;;-1:-1:-1;;;89:1354:5;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;-1:-1:-1;;;;;89:1354:5;;;;;;;;;;;;;;;;;;;425:50;;;;;;;;;;:::i;:::-;89:1354;;;;;;;425:50;89:1354;425:50;;89:1354;;425:50;89:1354;425:50;;;;;:::i;:::-;;89:1354;425:50;;89:1354;425:50;;89:1354;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;425:50;;;89:1354;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;89:1354:5;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;89:1354:5;;;;;;;;;;;;-1:-1:-1;;;;;89:1354:5;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;89:1354:5;;;-1:-1:-1;89:1354:5;;;;;-1:-1:-1;89:1354:5;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;-1:-1:-1;89:1354:5;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;:::o;:::-;;;;;-1:-1:-1;89:1354:5;;;;-1:-1:-1;89:1354:5;;-1:-1:-1;89:1354:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;89:1354:5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\nimport './SafeMath.sol';\r\n\r\ncontract Reviews {\r\n\r\n    using SafeMath for uint;\r\n\r\n    // Struct to represent the Review details\r\n    struct ReviewDetails {\r\n        address account;\r\n        address reviewer;\r\n        string review;\r\n        uint rating; // out of ten\r\n        uint requestedDate;\r\n    }\r\n\r\n    // Mapping to store reviews by account address\r\n    mapping(address => ReviewDetails[]) public reviews;\r\n\r\n    // Variable to store the available balance in the contract\r\n    uint public availableBalance;\r\n\r\n    // Function to add funds to the contract\r\n    function addFunds() public payable {\r\n        availableBalance = availableBalance.add(msg.value);\r\n    }\r\n\r\n    // Function to add a review\r\n    function addReview(address account, string memory str, uint rating) public {\r\n        // Create a new review\r\n        ReviewDetails memory newReview = ReviewDetails({\r\n            account: account,\r\n            reviewer: msg.sender,\r\n            review: str,\r\n            rating: rating,\r\n            requestedDate: block.timestamp\r\n        });\r\n        // Add the review to the array of reviews for the specified account\r\n        reviews[account].push(newReview);\r\n    }\r\n\r\n    // Function to get all reviews for a specific account\r\n    function getReviews(address account) external view returns (ReviewDetails[] memory) {\r\n        return reviews[account];\r\n    }\r\n}\r\n",
-  "sourcePath": "D:\\Fast\\Sem 8\\FYP_Final\\TranspaRent\\blockchain\\contracts\\Reviews.sol",
+  "sourcePath": "D:\\Fast\\Sem 8\\FYP_Final\\TranspaRent\\Blockchain\\contracts\\Reviews.sol",
   "ast": {
     "absolutePath": "project:/contracts/Reviews.sol",
     "exportedSymbols": {
@@ -1201,12 +1201,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xCec2A4A199177232Bca25411d4600F356FcF821d",
-      "transactionHash": "0x7cc540e00afccb74d08e156d85836a35364696a82aead65d1d52d92ecad84cab"
+      "address": "0x50d8b1d2C42a41f5aAB7a5B8E2abE1eD65238848",
+      "transactionHash": "0xb8bb0c5c3ceca178367f75c36bb0a95929567a56b784c3acdfe7f87bb8040f84"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-04-19T13:49:17.323Z",
+  "updatedAt": "2024-04-22T19:25:05.888Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
