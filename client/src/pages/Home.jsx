@@ -89,12 +89,12 @@ export default function Home() {
   }, []);
   return (
     <div>
- <div className="bg-gray-900 text-white py-20 px-8 lg:px-16">
+ <div className="bg-orange-500 text-white py-20 px-8 lg:px-16">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Empowering landlords and tenants alike, we are Transpa<span className="text-orange-500">Rent</span>
+                Empowering landlords and tenants alike, we are Transpa<span className="text-black">Rent</span>
               </h1>
               <p className="text-lg lg:text-l mb-8">
                 Revolutionizing the rental experience with seamless technology and unwavering commitment to transparency, security, and trust.
@@ -127,7 +127,7 @@ export default function Home() {
       </div>
 
       {/* Reviews section */}
-      <ReviewsContainer>
+      <ReviewsContainer className='bg-white'>
         <h2 className="text-3xl lg:text-3xl font-bold text-slate-600 text-center mb-6">What Our Users Say</h2> 
         <div className="max-w-4xl mx-auto">
           <Review>

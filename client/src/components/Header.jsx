@@ -26,12 +26,12 @@ export default function Header() {
   }, []);
 
   return (
-    <header className='bg-orange-500 shadow-md'>
+    <header className='bg-white shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
           <div className='flex items-center'> {/* Wrap TranspaRent and logo in a div */}
             <img src={logo} alt="Logo" className="h-8 w-8 rounded-full mr-2" /> {/* Add your logo */}
-            <h1 className='font-bold text-white text-sm sm:text-2xl flex flex-wrap'>
+            <h1 className='font-bold text-orange-500 text-sm sm:text-2xl flex flex-wrap'>
               <span>Transpa</span>
               <span className='text-black'>Rent</span>
             </h1>
@@ -49,19 +49,19 @@ export default function Header() {
         </form>
         <ul className='flex gap-4'>
           <NavLink to='/' className={({isActive}) => (isActive ? "font-bold" : '')}>
-            <li className='hidden sm:inline text-white hover:text-black'>Home</li>
+            <li className='hidden sm:inline text-orange-500 hover:text-black'>Home</li>
           </NavLink>
           <NavLink to='/about' className={({isActive}) => (isActive ? "font-bold" : '')}>
-            <li className='hidden sm:inline text-white hover:text-black'>About</li>
+            <li className='hidden sm:inline text-orange-500 hover:text-black'>About</li>
           </NavLink>
           <NavLink to='/contracts' className={({isActive}) => (isActive ? "font-bold" : '')}>
-            <li className='hidden sm:inline text-white hover:text-black'>Contracts</li>
+            <li className='hidden sm:inline text-orange-500 hover:text-black'>Contracts</li>
           </NavLink>
           <Link to='/profile'>
             {currentUser ? (
               <img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar} alt='profile' />
             ) : (
-              <li className='text-white hover:text-black'>Sign In</li>
+              <li className='text-orange-500 hover:text-black'>Sign In</li>
             )}
           </Link>
         </ul>
