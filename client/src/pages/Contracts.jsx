@@ -4,6 +4,7 @@ import Web3 from 'web3';
 import RentalContract from "../contracts/AgreementFactory.json"; // Make sure this path is correct
 import DisputeContract from "../contracts/DisputeResolution.json"; // Make sure this path is correct
 import PaymentContract from "../contracts/Payment.json"; // Make sure this path is correct
+import "./Contracts.css";
 
 export default function Contracts() {
   const { currentUser, loading, error } = useSelector((state) => state.user);
