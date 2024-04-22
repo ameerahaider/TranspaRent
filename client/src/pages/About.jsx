@@ -6,14 +6,14 @@ export default function About() {
       <div className='flex flex-col gap-8 p-8 md:p-16 max-w-6xl mx-auto'>
         <header>
           <h1 className='text-white font-bold text-4xl md:text-6xl'>
-            Welcome to Transpa<span className='text-black'>Rent</span>
+            Welcome to <span className='text-black'>Transpa</span>Rent
           </h1>
           <p className='text-white text-sm sm:text-base mt-4'>
             Redefining Home, Where Blockchain Meets Comfort.
           </p>
         </header>
 
-        <section className='text-gray-100 text-sm sm:text-base'>
+        <section className='text-gray-800 text-sm sm:text-base'>
           <p>
             TranspaRent is your go-to destination to find your next perfect place
             to live. We prioritize your security and privacy through our
@@ -23,10 +23,10 @@ export default function About() {
 
         {/* Additional Information */}
         <section className='mt-12'>
-          <h2 className='text-white font-bold text-2xl md:text-4xl'>
+          <h2 className='text-white font-bold text-2xl md:text-4xl border-b-2 border-gray-800 pb-2'>
             Our Vision
           </h2>
-          <p className='text-white text-sm sm:text-base mt-4'>
+          <p className='text-gray-800 text-sm sm:text-base mt-4'>
             At TranspaRent, we envision a future where property rental
             transactions are secure, efficient, and completely transparent. By
             leveraging blockchain, we aim to eliminate traditional barriers and
@@ -34,10 +34,10 @@ export default function About() {
             trust and integrity in every interaction.
           </p>
 
-          <h2 className='text-white font-bold text-2xl md:text-4xl mt-8'>
+          <h2 className='text-white font-bold text-2xl md:text-4xl mt-8 border-b-2 border-gray-800 pb-2'>
             How It Works
           </h2>
-          <ol className='list-decimal text-white text-sm sm:text-base mt-4 pl-4'>
+          <ol className='list-decimal text-gray-800 text-sm sm:text-base mt-4 pl-4'>
             <li>Browse: Explore a vast array of rental properties.</li>
             <li>Secure: Utilize the robust security of blockchain.</li>
             <li>
@@ -47,7 +47,7 @@ export default function About() {
           </ol>
         </section>
 
-        <section className='text-white text-sm sm:text-base mt-8'>
+        <section className='text-gray-800 text-sm sm:text-base mt-8'>
           <p>
             TranspaRent invites you to join us in creating a future where
             property rental is efficient, secure, and accessible to everyone.
