@@ -40,7 +40,7 @@ export default function Signin() {
     }
   };
   return (
-    <div className="bg-slate-900">
+    <div className="bg-orange-500">
       <div className='p-3 max-w-lg mx-auto'>
         <h1 className='text-3xl text-white text-center font-semibold my-7'>Sign In</h1>
         <form onSubmit={handleSubmit} className='flex flex-col gap-4'>

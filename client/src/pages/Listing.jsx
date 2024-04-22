@@ -147,7 +147,7 @@ export default function Listing() {
 
 
   return (
-    <main className='bg-slate-900'>
+    <main className='bg-orange-500'>
       {loading && <p className='text-center text-white my-7 text-2xl'>Loading...</p>}
       {error && (
         <p className='text-white text-center my-7 text-2xl'>Something went wrong!</p>
@@ -239,7 +239,7 @@ export default function Listing() {
             <div className='flex justify-center'>
             {listing.rented ? (
               <button
-                className='bg-orange-600 text-white rounded-lg uppercase opacity-50 cursor-not-allowed p-3'
+                className='bg-blue-800 text-white rounded-lg uppercase opacity-50 cursor-not-allowed p-3'
                 disabled
               >
                 Book Now (Rented)
@@ -247,7 +247,7 @@ export default function Listing() {
             ) : (
               <Link to={`/contract/${params.listingId}/${currentUser._id}`}>
                 <button
-                  className='bg-orange-600 text-white rounded-lg uppercase hover:opacity-95 p-3'
+                  className='bg-blue-800 text-white rounded-lg uppercase hover:opacity-95 p-3'
                 >
                   Book Now
                 </button>
@@ -275,7 +275,7 @@ export default function Listing() {
         onChange={(e) => setRating(e.target.value)}
         className="border rounded-md p-2 w-1/3"
       />
-      <button type="submit" className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-400 transition duration-300">Submit Review</button>
+      <button type="submit" className="bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-orange-400 transition duration-300">Submit Review</button>
     </form>
   </div>
    {/* Button to load reviews */}

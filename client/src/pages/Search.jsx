@@ -224,12 +224,12 @@ export default function Search() {
               <option value='createdAt_asc'>Oldest</option>
             </select>
           </div>
-          <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95'>
+          <button className='bg-orange-500 text-white p-3 rounded-lg uppercase hover:opacity-95'>
             Search
           </button>
         </form>
       </div>
-      <div className='flex-1 bg-gray-900'>
+      <div className='flex-1 bg-orange-500'>
         <h1 className='text-3xl font-semibold border-b p-3 text-white mt-5'>
           Listing results:
         </h1>

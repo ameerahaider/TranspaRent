@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function About() {
   return (
-    <div className='bg-slate-900'>
+    <div className='bg-orange-500'>
       <div className='flex flex-col gap-8 p-8 md:p-16 max-w-6xl mx-auto'>
         <header>
           <h1 className='text-white font-bold text-4xl md:text-6xl'>
-            Welcome to <span className='text-orange-500'>TranspaRent</span>
+            Welcome to Transpa<span className='text-black'>Rent</span>
           </h1>
           <p className='text-white text-sm sm:text-base mt-4'>
             Redefining Home, Where Blockchain Meets Comfort.

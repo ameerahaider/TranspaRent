@@ -157,7 +157,7 @@ export default function Profile() {
   }
 
   return (
-    <div className="bg-slate-900">
+    <div className="bg-orange-500">
       <div className="p-3 max-w-lg mx-auto">
         <h1 className='text-3xl font-semibold text-white text-center my-7'>Profile</h1>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -184,7 +184,7 @@ export default function Profile() {
           <input type='text' placeholder="username" defaultValue={currentUser.username} id="username" className="border p-3 rounded-lg" onChange={handleChange} />
           <input type='email' placeholder="email" defaultValue={currentUser.email} id="email" className="border p-3 rounded-lg" onChange={handleChange} />
           <input type='password' placeholder="password" id="password" className="border p-3 rounded-lg" onChange={handleChange} />
-          <button disabled={loading} className="bg-orange-600 text-white rounded-lg p-3 uppercase hover:opacity-95">{loading ? 'Loading...' : 'Update'}</button>
+          <button disabled={loading} className="bg-blue-900 text-white rounded-lg p-3 uppercase hover:opacity-95">{loading ? 'Loading...' : 'Update'}</button>
           <Link className="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95" to={"/create-listing"}>
             Create Listing
           </Link>
