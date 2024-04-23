@@ -89,14 +89,14 @@ export default function Home() {
   }, []);
   return (
     <div>
- <div className="bg-orange-500 text-white py-20 px-8 lg:px-16">
+ <div className="bg-orange-200 text-white py-20 px-8 lg:px-16">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-                Empowering landlords and tenants alike, we are Transpa<span className="text-black">Rent</span>
+                Empowering landlords and tenants alike, we are <span className="text-orange-500">Transpa</span><span className="text-black">Rent</span>
               </h1>
-              <p className="text-lg lg:text-l mb-8">
+              <p className="text-black text-lg lg:text-l mb-8">
                 Revolutionizing the rental experience with seamless technology and unwavering commitment to transparency, security, and trust.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -184,7 +184,7 @@ export default function Home() {
 
 
       {/* listing results for offer, sale and rent */}
-      <div className="bg-orange-500 text-white py-20 px-8 lg:px-16">
+      <div className="bg-orange-200 text-white py-20 px-8 lg:px-16">
       <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
         {offerListings && offerListings.length > 0 && (
           <div className=''>
