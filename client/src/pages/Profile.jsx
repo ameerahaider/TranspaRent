@@ -159,7 +159,7 @@ export default function Profile() {
   return (
     <div className="bg-orange-200">
       <div className="p-3 max-w-lg mx-auto">
-        <h1 className='text-3xl font-bold text-orange-200 text-center my-7'>Profile</h1>
+        <br></br>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input onChange={(e)=>setFile(e.target.files[0])} type="file" ref={fileRef} hidden accept="image/*" />
           <img onClick={()=>fileRef.current.click()} src={formData.avatar || currentUser.avatar} alt="profile" className="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2" />
@@ -200,13 +200,13 @@ export default function Profile() {
         <p className="text-red-700 mt-5">{showListingsError ? 'Error showing listings' : ''} </p>
         {userListings && userListings.length > 0 && 
           <div className="flex flex-col gap-4">
-            <h1 className="text-center text-white mt-7 text-2xl front-semibold">Your Listings</h1>
+            <h1 className="text-center text-black mt-7 text-2xl front-semibold">Your Listings</h1>
             {userListings.map((listing) => (
               <div key={listing._id} className="border rounded-lg p-3 flex justify-between items-center gap-4 bg-orange-300">
                 <Link to={`/listing/${listing._id}`}>
                   <img src={listing.imageUrls} alt="listing cover" className="h-16 w-16 object-contain" />
                 </Link>
-                <Link className="text-slate-100 font-semibold hover:underline truncate flex-1" to={`/listing/${listing._id}`}>
+                <Link className="text-slate-700 font-semibold hover:underline truncate flex-1" to={`/listing/${listing._id}`}>
                   <p>{listing.name}</p>
                 </Link>
                 <div className="flex flex-col item-center">

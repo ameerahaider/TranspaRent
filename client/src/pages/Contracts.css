@@ -20,11 +20,7 @@
     font-weight: bold;
   }
   
-  /* Zebra striping */
-  .contract-table tr:nth-child(even) {
-    background-color: #1f2937;
-  }
-  
+
   /* Hover effect */
   .contract-table tr:hover {
     background-color: #f99f56;

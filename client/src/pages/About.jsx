@@ -5,7 +5,7 @@ export default function About() {
     <div className='bg-orange-200'>
       <div className='flex flex-col gap-8 p-8 md:p-16 max-w-6xl mx-auto'>
         <header className="text-left">
-          <h1 className='text-white font-bold text-4xl md:text-6xl'>
+          <h1 className='text-black font-bold text-4xl md:text-6xl'>
             Welcome to <span className='text-orange-500'>Transpa</span><span className='text-black'>Rent</span>
           </h1>
           <p className='text-black text-lg md:text-xl mt-4'>
@@ -21,14 +21,14 @@ export default function About() {
 
         {/* Additional Information */}
         <section className='mt-12'>
-          <h2 className='text-white font-bold text-3xl md:text-5xl border-b-2 border-gray-800 pb-2'>
+          <h2 className='text-black font-bold text-3xl md:text-5xl border-b-2 border-gray-800 pb-2'>
             Our Vision
           </h2>
           <p className='text-gray-800 text-base md:text-lg mt-4 leading-relaxed'>
             At TranspaRent, we envision a future where property rental transactions are secure, efficient, and completely transparent. By leveraging blockchain, we aim to eliminate traditional barriers and create a decentralized ecosystem that empowers users while ensuring trust and integrity in every interaction.
           </p>
 
-          <h2 className='text-white font-bold text-3xl md:text-5xl mt-8 border-b-2 border-gray-800 pb-2'>
+          <h2 className='text-black font-bold text-3xl md:text-5xl mt-8 border-b-2 border-gray-800 pb-2'>
             How It Works
           </h2>
           <ol className='list-decimal text-gray-800 text-base md:text-lg mt-4 pl-4'>

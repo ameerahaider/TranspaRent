@@ -147,10 +147,10 @@ export default function Listing() {
 
 
   return (
-    <main className='bg-orange-500'>
-      {loading && <p className='text-center text-white my-7 text-2xl'>Loading...</p>}
+    <main className='bg-orange-200'>
+      {loading && <p className='text-center text-black my-7 text-2xl'>Loading...</p>}
       {error && (
-        <p className='text-white text-center my-7 text-2xl'>Something went wrong!</p>
+        <p className='text-black text-center my-7 text-2xl'>Something went wrong!</p>
       )}
       {listing && userDetails && !loading && !error && (
         <div>
@@ -185,14 +185,14 @@ export default function Listing() {
             </p>
           )}
           <div className='flex flex-col max-w-4xl mx-auto p-3 my-7 gap-4'>
-            <p className='text-2xl text-white font-semibold'>
+            <p className='text-2xl text-black font-semibold'>
               {listing.name} - PKR{' '}
               {listing.offer
                 ? listing.discountPrice.toLocaleString('en-US')
                 : listing.regularPrice.toLocaleString('en-US')}
               {listing.type === 'rent' && ' / month'}
             </p>
-            <p className='flex items-center mt-6 gap-2 text-white  text-sm'>
+            <p className='flex items-center mt-6 gap-2 text-black  text-sm'>
               <FaMapMarkerAlt className='text-green-700' />
               {listing.address}
             </p>
@@ -206,40 +206,40 @@ export default function Listing() {
                 </p>
               )}
             </div>
-            <p className='text-slate-100'>
-              <span className='font-semibold text-slate-200'>Description - </span>
+            <p className='text-slate-700'>
+              <span className='font-semibold text-slate-800'>Description - </span>
               {listing.description}
             </p>
             <ul className='text-green-500 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6'>
-              <li className='flex items-center gap-1 whitespace-nowrap '>
+              <li className='flex items-center gap-1 blackspace-nowrap '>
                 <FaBed className='text-lg' />
                 {listing.bedrooms > 1
                   ? `${listing.bedrooms} beds `
                   : `${listing.bedrooms} bed `}
               </li>
-              <li className='flex items-center gap-1 whitespace-nowrap '>
+              <li className='flex items-center gap-1 blackspace-nowrap '>
                 <FaBath className='text-lg' />
                 {listing.bathrooms > 1
                   ? `${listing.bathrooms} baths `
                   : `${listing.bathrooms} bath `}
               </li>
-              <li className='flex items-center gap-1 whitespace-nowrap '>
+              <li className='flex items-center gap-1 blackspace-nowrap '>
                 <FaParking className='text-lg' />
                 {listing.parking ? 'Parking spot' : 'No Parking'}
               </li>
-              <li className='flex items-center gap-1 whitespace-nowrap '>
+              <li className='flex items-center gap-1 blackspace-nowrap '>
                 <FaChair className='text-lg' />
                 {listing.furnished ? 'Furnished' : 'Unfurnished'}
               </li>
             </ul>
-            <p className='text-slate-200 font-semibold text-center mt-6'>
+            <p className='text-slate-700 font-semibold text-center mt-6'>
               Added by: {userDetails.username}
             </p>
         
             <div className='flex justify-center'>
             {listing.rented ? (
               <button
-                className='bg-blue-800 text-white rounded-lg uppercase opacity-50 cursor-not-allowed p-3'
+                className='bg-blue-800 text-black rounded-lg uppercase opacity-50 cursor-not-allowed p-3'
                 disabled
               >
                 Book Now (Rented)
@@ -259,7 +259,7 @@ export default function Listing() {
 
   {/* Review form */}
   <div className="my-8">
-    <h3 className="text-lg text-white font-semibold mb-2">Write a Review:</h3>
+    <h3 className="text-lg text-black font-semibold mb-2">Write a Review:</h3>
     <form onSubmit={submitReview} className="flex flex-col gap-4">
       <textarea
         rows="4"
@@ -290,7 +290,7 @@ export default function Listing() {
 
   {/* Reviews list */}
   <div className="my-8">
-    <h3 className="text-lg text-white font-semibold mb-2">Reviews:</h3>
+    <h3 className="text-lg text-black font-semibold mb-2">Reviews:</h3>
     {reviews.length > 0 ? (
       reviews.map((review, index) => {
         const reviewerIndex = getAddressIndex(review.reviewer);

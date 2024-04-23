@@ -91,9 +91,9 @@ export default function Home() {
     <div>
  <div className="bg-orange-200 text-white py-20 px-8 lg:px-16">
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <div>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+              <h1 className="text-4xl text-black lg:text-5xl font-bold mb-6">
                 Empowering landlords and tenants alike, we are <span className="text-orange-500">Transpa</span><span className="text-black">Rent</span>
               </h1>
               <p className="text-black text-lg lg:text-l mb-8">
@@ -189,7 +189,7 @@ export default function Home() {
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-white'>Featured Offers</h2>
+              <h2 className='text-2xl font-semibold text-black'>Featured Offers</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
@@ -202,7 +202,7 @@ export default function Home() {
         {rentListings && rentListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-white'>Latest Properties</h2>
+              <h2 className='text-2xl font-semibold text-black'>Latest Properties</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
             </div>
             <div className='flex flex-wrap gap-4'>

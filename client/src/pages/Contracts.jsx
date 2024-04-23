@@ -269,8 +269,8 @@ export default function Contracts() {
           value={disputeReason}
           onChange={(e) => setDisputeReason(e.target.value)} // Update disputeReason state on change
         ></textarea>
-        <button onClick={submitDispute} style={{ marginTop: "20px", width: "100%", padding: "10px", borderRadius: "5px", backgroundColor: "#007bff", color: "#fff", border: "none", cursor: "pointer" }}>Submit</button>
-        <button onClick={() => setIsDisputePopupVisible(false)} style={{ marginTop: "10px", width: "100%", padding: "10px", borderRadius: "5px", backgroundColor: "#dc3545", color: "#fff", border: "none", cursor: "pointer" }}>Cancel</button>
+        <button onClick={submitDispute} style={{ marginTop: "20px", width: "100%", padding: "10px", borderRadius: "5px", backgroundColor: "#007bff", color: "#black", border: "none", cursor: "pointer" }}>Submit</button>
+        <button onClick={() => setIsDisputePopupVisible(false)} style={{ marginTop: "10px", width: "100%", padding: "10px", borderRadius: "5px", backgroundColor: "#dc3545", color: "#black", border: "none", cursor: "pointer" }}>Cancel</button>
       </div>
     )
   );
@@ -384,10 +384,10 @@ export default function Contracts() {
 
 
 
-  // style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#fff", padding: "20px", border: "1px solid #ccc", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }}
+  // style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#black", padding: "20px", border: "1px solid #ccc", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }}
 
   return (
-    <div style={{ background: "#F97316" }}>
+    <div style={{ background: "#FED7AA" }}>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
         {/* Popup for Displaying Landlord Contract Details */}
         {isPopupVisible && (
@@ -406,10 +406,10 @@ export default function Contracts() {
                 <p style={{ color: "#fff" }}><strong>Status:</strong> {selectedContractDetails.status}</p>
               </>
             )}
-            {/* <button onClick={() => setIsPopupVisible(false)} style={{ position: "absolute", top: "10px", right: "10px", padding: "10px", borderRadius: "5px", backgroundColor: "#007bff", color: "#fff", border: "none", cursor: "pointer" }}>X</button> */}
-            <button onClick={() => setIsPopupVisible(false)} style={{ position: "absolute", top: "10px", right: "10px", padding: "10px", borderRadius: "40%", backgroundColor: "#dc3545", color: "#fff", border: "none", cursor: "pointer", fontSize: "15px" }}>✕</button>
+            {/* <button onClick={() => setIsPopupVisible(false)} style={{ position: "absolute", top: "10px", right: "10px", padding: "10px", borderRadius: "5px", backgroundColor: "#007bff", color: "#black", border: "none", cursor: "pointer" }}>X</button> */}
+            <button onClick={() => setIsPopupVisible(false)} style={{ position: "absolute", top: "10px", right: "10px", padding: "10px", borderRadius: "40%", backgroundColor: "#dc3545", color: "#black", border: "none", cursor: "pointer", fontSize: "15px" }}>✕</button>
 
-            {/* <button onClick={() => setIsPopupVisible(false)} style={{  marginTop: "20px", width: "25%", padding: "10px", borderRadius: "5px", backgroundColor: "#007bff", color: "#fff", border: "none", cursor: "pointer" }}>Close</button> */}
+            {/* <button onClick={() => setIsPopupVisible(false)} style={{  marginTop: "20px", width: "25%", padding: "10px", borderRadius: "5px", backgroundColor: "#007bff", color: "#black", border: "none", cursor: "pointer" }}>Close</button> */}
           </div>
         )}
 
@@ -430,7 +430,7 @@ export default function Contracts() {
                 <p style={{ color: "#fff" }} ><strong>Status:</strong> {selectedTenantContractDetails.status}</p>
               </>
             )}
-            <button onClick={() => setIsTenantPopupVisible(false)} style={{ position: "absolute", top: "10px", right: "10px", padding: "10px", borderRadius: "40%", backgroundColor: "#dc3545", color: "#fff", border: "none", cursor: "pointer", fontSize: "15px" }}>✕</button>
+            <button onClick={() => setIsTenantPopupVisible(false)} style={{ position: "absolute", top: "10px", right: "10px", padding: "10px", borderRadius: "40%", backgroundColor: "#dc3545", color: "#black", border: "none", cursor: "pointer", fontSize: "15px" }}>✕</button>
           </div>
         )}
 
@@ -488,7 +488,7 @@ export default function Contracts() {
                 ))}
               </tbody>
             </table>
-            <button onClick={() => setIsDisputeDetailsPopupVisible(false)} style={{ position: "absolute", top: "10px", right: "10px", padding: "10px", borderRadius: "40%", backgroundColor: "#dc3545", color: "#fff", border: "none", cursor: "pointer", fontSize: "15px" }}>✕</button>
+            <button onClick={() => setIsDisputeDetailsPopupVisible(false)} style={{ position: "absolute", top: "10px", right: "10px", padding: "10px", borderRadius: "40%", backgroundColor: "#dc3545", color: "#black", border: "none", cursor: "pointer", fontSize: "15px" }}>✕</button>
           </div>
         )}
 
@@ -528,54 +528,54 @@ export default function Contracts() {
                 ))}
               </tbody>
             </table>
-            <button onClick={() => setIsPopupVisible2(false)} style={{ position: 'absolute', top: '10px', right: '10px', padding: '10px', borderRadius: '40%', backgroundColor: '#dc3545', color: '#fff', border: 'none', cursor: 'pointer', fontSize: '15px' }}>✕</button>
+            <button onClick={() => setIsPopupVisible2(false)} style={{ position: 'absolute', top: '10px', right: '10px', padding: '10px', borderRadius: '40%', backgroundColor: '#dc3545', color: '#black', border: 'none', cursor: 'pointer', fontSize: '15px' }}>✕</button>
           </div>
         )}
 
-        <h1 style={{ textAlign: "center", marginBottom: "10px", fontWeight: "bold", fontSize: "24px", color: "#fff" }}>
+        <h1 style={{ textAlign: "center", marginBottom: "10px", fontWeight: "bold", fontSize: "30px", color: "#black" }}>
           Contract Management
         </h1>
-        <div style={{ textAlign: "center", marginBottom: "20px", fontSize: "18px", color: "#fff", fontStyle: "italic" }}>
+        <div style={{ textAlign: "center", marginBottom: "20px", fontSize: "18px", color: "#black", fontStyle: "italic" }}>
           Username: {currentUser.username}
         </div>
-        <div style={{ textAlign: "center", marginBottom: "20px", fontSize: "18px", color: "#fff", fontStyle: "italic" }}>
+        <div style={{ textAlign: "center", marginBottom: "20px", fontSize: "18px", color: "#black", fontStyle: "italic" }}>
           Account Address: {accounts[currentUser.index]}
         </div>
 
         {/* Landlord Contracts Table */}
-        <h2 style={{ textAlign: "center", margin: "20px 0", fontWeight: "bold", color: "#fff" }}>Landlord Contracts</h2>
+        <h2 style={{ textAlign: "center", margin: "20px 0", fontWeight: "bold", color: "#black" }}>Landlord Contracts</h2>
         <table className="contract-table" style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Property ID</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Tenant</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Status</th> {/* New column for Status */}
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>View Details</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>View Disputes</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Agreement</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Terminate</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Property ID</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Tenant</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Status</th> {/* New column for Status */}
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>View Details</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>View Disputes</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Agreement</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Terminate</th>
             </tr>
           </thead>
           <tbody>
             {LandlordTable.map((contract, index) => (
               <tr key={index}>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{contract.propertyID}</td>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{contract.tenantUsername}</td>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{convertStatus(contract.status)}</td> {/* Display status */}
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>
-                  <button onClick={() => handleLandlordDetailsClick(contract.tenant, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Details</button>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}>{contract.propertyID}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}>{contract.tenantUsername}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}>{convertStatus(contract.status)}</td> {/* Display status */}
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}>
+                  <button onClick={() => handleLandlordDetailsClick(contract.tenant, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#black", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Details</button>
                 </td>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}><button onClick={() => handleViewDisputes2(contract.tenant, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Disputes</button></td>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}><button onClick={() => handleViewDisputes2(contract.tenant, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#black", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Disputes</button></td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}>
                   {convertStatus(contract.status) !== 'Active' && convertStatus(contract.status) !== 'Terminated' ? (
-                    <button onClick={() => handleApprove(contract.tenant, contract.propertyID)} style={{ backgroundColor: "#dc3545", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Approve</button>
+                    <button onClick={() => handleApprove(contract.tenant, contract.propertyID)} style={{ backgroundColor: "#dc3545", color: "#black", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Approve</button>
                   ) : (
-                    <button style={{ backgroundColor: "#ccc", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "not-allowed" }} disabled>Approve</button>
+                    <button style={{ backgroundColor: "#ccc", color: "#black", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "not-allowed" }} disabled>Approve</button>
                   )}
                 </td>
 
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>
-                  <button onClick={() => handleLandlordTerminate(contract.tenant, contract.propertyID)} style={{ backgroundColor: "#dc3545", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Terminate</button>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}>
+                  <button onClick={() => handleLandlordTerminate(contract.tenant, contract.propertyID)} style={{ backgroundColor: "#dc3545", color: "#black", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Terminate</button>
                 </td>
               </tr>
             ))}
@@ -585,32 +585,32 @@ export default function Contracts() {
 
 
         {/* Tenant Contracts Table */}
-        <h2 style={{ textAlign: "center", margin: "20px 0", fontWeight: "bold", color: "#fff" }}>Tenant Contracts</h2>
+        <h2 style={{ textAlign: "center", margin: "20px 0", fontWeight: "bold", color: "#black" }}>Tenant Contracts</h2>
         <table className="contract-table" style={{ width: "100%", borderCollapse: "collapse" }}>
           <thead>
             <tr>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Property ID</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Landlord</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Status</th> {/* New column for Status */}
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>View Details</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>View Disputes</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Raise Disputes</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#fff" }}>Terminate</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Property ID</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Landlord</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Status</th> {/* New column for Status */}
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>View Details</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>View Disputes</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Raise Disputes</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Terminate</th>
             </tr>
           </thead>
           <tbody>
             {TenantTable.map((contract, index) => (
               <tr key={index}>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{contract.propertyID}</td>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{contract.landlordUsername}</td>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}>{convertStatus(contract.status)}</td> {/* Display status */}
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}><button onClick={() => handleTenantDetailsClick(contract.landlord, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Details</button></td>
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}><button onClick={() => handleViewDisputesTenant(contract.landlord, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Disputes</button></td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}>{contract.propertyID}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}>{contract.landlordUsername}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}>{convertStatus(contract.status)}</td> {/* Display status */}
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}><button onClick={() => handleTenantDetailsClick(contract.landlord, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#black", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Details</button></td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}><button onClick={() => handleViewDisputesTenant(contract.landlord, contract.propertyID)} style={{ backgroundColor: "#007bff", color: "#black", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Disputes</button></td>
 
                 {/* <DisputeDetailsPopup /> */}
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}><button onClick={() => handleRaiseDispute(contract.landlord, contract.propertyID)} style={{ backgroundColor: "#dc3545", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Raise</button></td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}><button onClick={() => handleRaiseDispute(contract.landlord, contract.propertyID)} style={{ backgroundColor: "#dc3545", color: "#black", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Raise</button></td>
                 {/* Raise dispute popup */}
-                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#fff" }}><button onClick={() => handleTenantTerminate(contract.landlord, contract.propertyID)} style={{ backgroundColor: "#dc3545", color: "#fff", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Terminate</button></td>
+                <td style={{ border: "1px solid #ddd", padding: "8px", color: "#black" }}><button onClick={() => handleTenantTerminate(contract.landlord, contract.propertyID)} style={{ backgroundColor: "#dc3545", color: "#black", border: "none", padding: "8px 12px", borderRadius: "5px", cursor: "pointer" }}>Terminate</button></td>
               </tr>
             ))}
           </tbody>

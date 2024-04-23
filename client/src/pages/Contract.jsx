@@ -342,7 +342,7 @@ export default function Contract() {
   }
 
   return (
-    <div style={{background: "#F97316"}}>
+    <div style={{background: "#FED7AA"}}>
       <div style={{ display: "flex", justifyContent: "center", maxWidth: "1200px", margin: "0 auto", padding: "20px" }}>
         {/* Left side - Contract Details */}
         <div style={{ flex: 0.75, marginRight: "40px" }}>
@@ -362,7 +362,7 @@ export default function Contract() {
                   marginBottom: "20px",
                   fontWeight: "bold",
                   fontSize: "32px",
-                  color: "#fff"
+                  color: "#black"
                 }}
               >
                 Contract Details
@@ -381,7 +381,7 @@ export default function Contract() {
                 </div>
               </div> */}
               {currentUser && (
-                <div style={{ marginBottom: "10px", color: "#fff" }}>
+                <div style={{ marginBottom: "10px", color: "#black" }}>
                   <label>Tenant username:</label>
                   <div
                     style={{
@@ -407,7 +407,7 @@ export default function Contract() {
                 </div>
               </div> */}
               {landlord && (
-                <div style={{ marginBottom: "10px", color: "#fff" }}>
+                <div style={{ marginBottom: "10px", color: "#black" }}>
                   <label>LandLord username:</label>
                   <div
                     style={{
@@ -420,7 +420,7 @@ export default function Contract() {
                   </div>
                 </div>
               )}
-              <div style={{ marginBottom: "10px", color: "#fff" }}>
+              <div style={{ marginBottom: "10px", color: "#black" }}>
                 <label>Listing ID:</label>
                 <div
                   style={{
@@ -433,7 +433,7 @@ export default function Contract() {
                 </div>
               </div>
               {listing && (
-                <div style={{ marginBottom: "10px", color: "#fff" }}>
+                <div style={{ marginBottom: "10px", color: "#black" }}>
                   <label>Listing Name:</label>
                   <div
                     style={{
@@ -448,7 +448,7 @@ export default function Contract() {
               )}
               {/* Lease duration, start date, termination date, rent amount, and security deposit inputs */}
               <div style={{ marginBottom: "10px" }}>
-            <label className="text-white">Lease Duration (Months):</label>
+            <label className="text-black">Lease Duration (Months):</label>
             <input
               type="number"
               value={leaseDuration}
@@ -465,7 +465,7 @@ export default function Contract() {
             )}
           </div>
               <div style={{ marginBottom: "10px" }}>
-                <label className="text-white">Start Date:</label>
+                <label className="text-black">Start Date:</label>
                 <input
                   type="date"
                   value={startDate}
@@ -479,7 +479,7 @@ export default function Contract() {
                 />
               </div>
               <div style={{ marginBottom: "10px" }}>
-                <label className="text-white">Rent Amount:</label>
+                <label className="text-black">Rent Amount:</label>
                 <input
                   type="number"
                   value={rentAmount}
@@ -493,7 +493,7 @@ export default function Contract() {
                 />
               </div>
               <div style={{ marginBottom: "10px" }}>
-                <label className="text-white">Security Deposit:</label>
+                <label className="text-black">Security Deposit:</label>
                 <input
                   type="number"
                   value={securityDeposit}
@@ -526,7 +526,7 @@ export default function Contract() {
           )}
         </div>
         {/* Right side - Contract Terms and Approval Button */}
-        <div style={{ flex: 1, marginLeft: "120px" , color: "#fff" }}>
+        <div style={{ flex: 1, marginLeft: "120px" , color: "#black" }}>
         {contractSubmitted && (
           <div style={{ marginBottom: "20px", fontFamily: "Arial, Helvetica, sans-serif" }}>
           <h1 style={{ fontSize: "32px", fontWeight: "bold", fontFamily: "Arial, Helvetica, sans-serif" }}>Contract Terms</h1>
@@ -616,7 +616,8 @@ export default function Contract() {
                   width: "100%",
                   padding: "15px",
                   borderRadius: "10px",
-                  border: "1px solid ##fff",
+                  border: "1px solid ##black",
+                  color: "#fff"
                 }}
               >
                 Submit Payment
@@ -634,7 +635,7 @@ export default function Contract() {
               borderRadius: "5px",
               border: "none",
               background: "#28a745", // Green color
-              color: "#fff",
+              color: "#black",
               cursor: "pointer",
               marginTop: "10px", // Add margin top for spacing
             }}
@@ -652,7 +653,7 @@ export default function Contract() {
               borderRadius: "5px",
               border: "none",
               background: "#dc3545", // Red color
-              color: "#fff",
+              color: "#black",
               cursor: "pointer",
               marginTop: "10px", // Add margin top for spacing
             }}
