@@ -93,7 +93,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+              <h1 className="text-4xl text-black lg:text-5xl font-bold mb-6">
                 Empowering landlords and tenants alike, we are <span className="text-orange-500">Transpa</span><span className="text-black">Rent</span>
               </h1>
               <p className="text-black text-lg lg:text-l mb-8">
