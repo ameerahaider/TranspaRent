@@ -586,7 +586,7 @@ export default function Contracts() {
 
         {/* Tenant Contracts Table */}
         <h2 style={{ textAlign: "center", margin: "20px 0", fontWeight: "bold", color: "#black" }}>Tenant Contracts</h2>
-        <table className="contract-table" style={{ width: "100%", borderCollapse: "collapse" }}>
+        <table className="contract-table" style={{ width: "100%", borderCollapse: "collapse"}}>
           <thead>
             <tr>
               <th style={{ border: "1px solid #ddd", padding: "8px", textAlign: "left", fontWeight: "bold", color: "#black" }}>Property ID</th>
