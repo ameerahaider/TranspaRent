@@ -295,10 +295,10 @@ export default function Listing() {
       reviews.map((review, index) => {
         const reviewerIndex = getAddressIndex(review.reviewer);
         return (
-          <div key={index} className="border rounded-md p-4 mb-4">
-            <p className="text-gray-100">Reviewer: {reviewerIndex >= 0 ? `Account ${reviewerIndex + 1} - ${review.reviewer}` : review.reviewer}</p>
-            <p className="text-gray-100">Rating: {review.rating.toString()}</p>
-            <p className="text-gray-100 mt-2">Review: {review.review}</p>
+          <div key={index} className="border border-orange-300 rounded-md p-4 mb-4 bg-orange-300">
+            <p className="text-black-100 ">Reviewer: {reviewerIndex >= 0 ? `Account ${reviewerIndex + 1} - ${review.reviewer}` : review.reviewer}</p>
+            <p className="text-black-100">Rating: {review.rating.toString()}</p>
+            <p className="text-black-100 mt-2">Review: {review.review}</p>
           </div>
         );
       })

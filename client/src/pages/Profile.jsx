@@ -198,7 +198,7 @@ export default function Profile() {
         <div className="flex flex-col gap-4">
           <h1 className="text-center text-black mt-7 text-2xl front-semibold">Your Listings</h1>
           {userListings.map((listing) => (
-            <div key={listing._id} className="border rounded-lg p-3 flex justify-between items-center gap-4 bg-orange-300">
+            <div key={listing._id} className="border rounded-lg p-3 flex justify-between items-center gap-4 bg-orange-400 border-orange-400">
               <Link to={`/listing/${listing._id}`}>
                 <img src={listing.imageUrls} alt="listing cover" className="h-16 w-16 object-contain" />
               </Link>

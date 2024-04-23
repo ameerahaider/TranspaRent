@@ -415,19 +415,19 @@ export default function Contracts() {
 
         {/* Popup for Displaying Tenant Contract Details */}
         {isTenantPopupVisible && (
-          <div style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#1f2937", padding: "20px", border: "1px solid #ccc", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }}>
-            <h2 style={{ marginBottom: "20px", textAlign: "center", color: "#fff", fontWeight: "bold" }}>Tenant Contract Details</h2>
+          <div style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#f99f56", padding: "20px", border: "1px solid #f99f56", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }}>
+            <h2 style={{ marginBottom: "20px", textAlign: "center", color: "#black", fontWeight: "bold"  }}>Tenant Contract Details</h2>
             {selectedTenantContractDetails && (
               <>
-                <p style={{ color: "#fff" }} ><strong>Property ID:</strong> {selectedTenantContractDetails.propertyID}</p>
-                <p style={{ color: "#fff" }} ><strong>Landlord:</strong> {selectedTenantContractDetails.landlordUsername}</p>
-                <p style={{ color: "#fff" }} ><strong>Landlord ID:</strong> {selectedTenantContractDetails.landlord}</p>
-                <p style={{ color: "#fff" }} ><strong>Rent Amount:</strong> {selectedTenantContractDetails.rentAmount}</p>
-                <p style={{ color: "#fff" }} ><strong>Security Deposit:</strong> {selectedTenantContractDetails.securityDeposit}</p>
-                <p style={{ color: "#fff" }} ><strong>Lease Duration:</strong> {selectedTenantContractDetails.leaseDuration} Month</p>
-                <p style={{ color: "#fff" }} ><strong>Start Date:</strong> {new Date(parseInt(selectedTenantContractDetails.startDate) * 1000).toLocaleDateString()}</p>
-                <p style={{ color: "#fff" }} ><strong>Termination Date:</strong> {new Date(parseInt(selectedTenantContractDetails.terminationDate) * 1000).toLocaleDateString()}</p>
-                <p style={{ color: "#fff" }} ><strong>Status:</strong> {selectedTenantContractDetails.status}</p>
+                <p style={{ color: "#black" }} ><strong>Property ID:</strong> {selectedTenantContractDetails.propertyID}</p>
+                <p style={{ color: "#black" }} ><strong>Landlord:</strong> {selectedTenantContractDetails.landlordUsername}</p>
+                <p style={{ color: "#black" }} ><strong>Landlord ID:</strong> {selectedTenantContractDetails.landlord}</p>
+                <p style={{ color: "#black" }} ><strong>Rent Amount:</strong> {selectedTenantContractDetails.rentAmount}</p>
+                <p style={{ color: "#black" }} ><strong>Security Deposit:</strong> {selectedTenantContractDetails.securityDeposit}</p>
+                <p style={{ color: "#black" }} ><strong>Lease Duration:</strong> {selectedTenantContractDetails.leaseDuration} Month</p>
+                <p style={{ color: "#black" }} ><strong>Start Date:</strong> {new Date(parseInt(selectedTenantContractDetails.startDate) * 1000).toLocaleDateString()}</p>
+                <p style={{ color: "#black" }} ><strong>Termination Date:</strong> {new Date(parseInt(selectedTenantContractDetails.terminationDate) * 1000).toLocaleDateString()}</p>
+                <p style={{ color: "#black" }} ><strong>Status:</strong> {selectedTenantContractDetails.status}</p>
               </>
             )}
             <button onClick={() => setIsTenantPopupVisible(false)} style={{ position: "absolute", top: "10px", right: "10px", padding: "10px", borderRadius: "40%", backgroundColor: "#dc3545", color: "#black", border: "none", cursor: "pointer", fontSize: "15px" }}>✕</button>

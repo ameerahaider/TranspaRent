@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import logo from '../assets/icon.png'; // Import your logo file
 
 export default function Signup() {
   const [formData, setFormData] = useState({});
@@ -44,9 +45,17 @@ export default function Signup() {
     
   };
   return (
-    <div className="bg-orange-200">
-      <div className='p-3 max-w-lg mx-auto'>
-        <h1 className='text-3xl text-center font-semibold my-7 text-black'>Sign Up</h1>
+    <div className="bg-orange-200 p-8 max-w-lg  mx-auto rounded-lg shadow-lg mt-10 mb-10">
+        <div className="flex justify-center"> {/* Align content to center */}
+        <div className='flex items-center'> {/* Wrap TranspaRent and logo in a div */}
+          <img src={logo} alt="Logo" className="h-8 w-8  mr-1.5" /> {/* Add your logo */}
+          <h1 className='font-bold text-orange-500 text-sm sm:text-3xl flex flex-wrap'>
+            <span>Transpa</span>
+            <span className='text-black'>Rent</span>
+          </h1>
+        </div>
+      </div>
+      <h1 className='text-2xl text-orange-500 font-bold my-7'>Sign Up</h1>
         <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
           <input type='text' placeholder='username' className='border p-3 rounded-lg' id='username'onChange={handleChange} />
           <input type='tel' placeholder='CNIC' className='border p-3 rounded-lg' id='cnic' />
@@ -74,6 +83,5 @@ export default function Signup() {
         </div>
         {error && <p className="text-red-500 mt-5">{error}</p>}
       </div>
-    </div>
   )
 }
