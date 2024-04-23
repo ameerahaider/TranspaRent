@@ -91,7 +91,7 @@ export default function Home() {
     <div>
  <div className="bg-orange-500 text-white py-20 px-8 lg:px-16">
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-20">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6">
                 Empowering landlords and tenants alike, we are Transpa<span className="text-black">Rent</span>
