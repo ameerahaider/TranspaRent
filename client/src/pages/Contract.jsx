@@ -342,10 +342,10 @@ export default function Contract() {
   }
 
   return (
-    <div style={{background: "#1f2937"}}>
-      <div style={{ display: "flex", justifyContent: "center", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+    <div style={{background: "#F97316"}}>
+      <div style={{ display: "flex", justifyContent: "center", maxWidth: "1200px", margin: "0 auto", padding: "20px" }}>
         {/* Left side - Contract Details */}
-        <div style={{ flex: 1, marginRight: "40px" }}>
+        <div style={{ flex: 0.75, marginRight: "40px" }}>
           {landlordId === userId && (
             <div
               style={{ marginBottom: "10px", color: "green", fontWeight: "bold" }}
@@ -361,7 +361,7 @@ export default function Contract() {
                   textAlign: "center",
                   marginBottom: "20px",
                   fontWeight: "bold",
-                  fontSize: "24px",
+                  fontSize: "32px",
                   color: "#fff"
                 }}
               >
@@ -515,7 +515,7 @@ export default function Contract() {
                 padding: "10px",
                 borderRadius: "5px",
                 border: "none",
-                background: leaseDurationValid ? "#fb8c00" : "#cccccc", // Change button color if disabled
+                background: leaseDurationValid ? "#1E3A8A" : "#cccccc", // Change button color if disabled
                 color: "#fff",
                 cursor: leaseDurationValid ? "pointer" : "default",
                 }}
@@ -526,10 +526,11 @@ export default function Contract() {
           )}
         </div>
         {/* Right side - Contract Terms and Approval Button */}
-        <div style={{ flex: 1, marginLeft: "40px" , color: "#fff" }}>
+        <div style={{ flex: 1, marginLeft: "120px" , color: "#fff" }}>
         {contractSubmitted && (
           <div style={{ marginBottom: "20px", fontFamily: "Arial, Helvetica, sans-serif" }}>
-          <h2 style={{ fontWeight: "bold", fontFamily: "Arial, Helvetica, sans-serif" }}>Contract Terms</h2>
+          <h1 style={{ fontSize: "32px", fontWeight: "bold", fontFamily: "Arial, Helvetica, sans-serif" }}>Contract Terms</h1>
+          <br></br>
           {terms.map((term, index) => (
             <div key={index} style={{ marginBottom: "10px", fontFamily: "Arial, Helvetica, sans-serif" }}>
               {term}
@@ -540,7 +541,8 @@ export default function Contract() {
         )}
         {showPaymentSection && (
             <div>
-              <h2 style={{ fontWeight: "bold" }}>Payment Information</h2>
+              <h2 style={{ fontSize: "22px", fontWeight: "bold" }}>Payment Information</h2>
+              <br />
               <input
                 type="text"
                 value={cardholderName}
@@ -606,11 +608,11 @@ export default function Contract() {
                   color: "#000000",
                 }}
               />
-              <hr></hr>
+              <br></br>
               <button
                 onClick={handlePayment}
                 style={{
-                  background: "#fb8c00",
+                  background: "#1E3A8A",
                   width: "100%",
                   padding: "15px",
                   borderRadius: "10px",

@@ -387,7 +387,7 @@ export default function Contracts() {
   // style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#fff", padding: "20px", border: "1px solid #ccc", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }}
 
   return (
-    <div style={{ background: "#1f2937" }}>
+    <div style={{ background: "#F97316" }}>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
         {/* Popup for Displaying Landlord Contract Details */}
         {isPopupVisible && (
