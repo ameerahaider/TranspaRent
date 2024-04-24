@@ -391,7 +391,7 @@ export default function Contracts() {
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
         {/* Popup for Displaying Landlord Contract Details */}
         {isPopupVisible && (
-          <div style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#f99f56", padding: "20px", border: "1px solid #ccc", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }} >
+          <div style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#fff", boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)" ,padding: "20px", border: "1px solid #ccc", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }} >
             <h2 style={{ marginBottom: "20px", textAlign: "center", color: "#black", fontWeight: "bold" }}>Landlord Contract Details</h2>
             {selectedContractDetails && (
               <>
@@ -415,7 +415,7 @@ export default function Contracts() {
 
         {/* Popup for Displaying Tenant Contract Details */}
         {isTenantPopupVisible && (
-          <div style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#f99f56", padding: "20px", border: "1px solid #f99f56", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }}>
+          <div style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#fff", boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",padding: "20px", border: "1px solid #f99f56", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }}>
             <h2 style={{ marginBottom: "20px", textAlign: "center", color: "#black", fontWeight: "bold"  }}>Tenant Contract Details</h2>
             {selectedTenantContractDetails && (
               <>
@@ -436,12 +436,12 @@ export default function Contracts() {
 
         {/* Popup for Displaying Raise Dispute  */}
         {isDisputePopupVisible && (
-          <div style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#f99f56", padding: "20px", border: "1px solid #ccc", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }}>
+          <div style={{ position: "fixed", top: "20%", left: "25%", right: "25%", backgroundColor: "#fff", boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)", padding: "20px", border: "1px solid #ccc", zIndex: 100, overflowY: "auto", maxHeight: "60%", borderRadius: "8px" }}>
             <h2 style={{ marginBottom: "20px", textAlign: "center", color: "#black", fontWeight: "bold" }}>Raise Dispute</h2>
             <div style={{ padding: "10px" }}>
               <label style={{ color: "#black" }}>Title:  </label>
               <input
-                style={{ backgroundColor: "#f99f56", color: "#black", width: "90%", borderRadius: "5px", border: "1px solid #ccc" }}
+                style={{ backgroundColor: "#fff", color: "#black", width: "90%", borderRadius: "5px", border: "1px solid #ccc" }}
                 type="text"
                 value={disputeTitle}
                 onChange={(e) => setDisputeTitle(e.target.value)} // Update disputeTitle state on change
@@ -450,7 +450,7 @@ export default function Contracts() {
             <div style={{ padding: "10px" }}>
               <label style={{ color: "#black" }} >Reason:  </label>
               <input
-                style={{ backgroundColor: "#f99f56", color: "#black", width: "90%", borderRadius: "5px", border: "1px solid #ccc" }}
+                style={{ backgroundColor: "#fff", color: "#black", width: "90%", borderRadius: "5px", border: "1px solid #ccc" }}
                 value={disputeReason}
                 onChange={(e) => setDisputeReason(e.target.value)} // Update disputeReason state on change
               />
@@ -464,7 +464,7 @@ export default function Contracts() {
 
         {/* Popup for Displaying Dispute Details Tenant */}
         {isDisputeDetailsPopupVisible && disputeDetails && disputeDetails.length > 0 && (
-          <div style={{ position: 'fixed', top: '20%', left: '25%', right: '25%', backgroundColor: '#f99f56', padding: '20px', border: '1px solid #ccc', zIndex: 100, overflowY: 'auto', maxHeight: '60%', borderRadius: '8px' }}>
+          <div style={{ position: 'fixed', top: '20%', left: '25%', right: '25%', backgroundColor: '#fff', padding: '20px',boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)", border: '1px solid #ccc', zIndex: 100, overflowY: 'auto', maxHeight: '60%', borderRadius: '8px' }}>
             <h2 style={{ marginBottom: '20px', textAlign: 'center', fontWeight: "bold", color: "#black" }}>Dispute Details</h2>
             <table className="contract-table" style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
@@ -494,7 +494,7 @@ export default function Contracts() {
 
         {/* Popup for Displaying Dispute Details Landlord*/}
         {isPopupVisible2 && disputeDetails2 && disputeDetails2.length > 0 && (
-          <div style={{ position: 'fixed', top: '20%', left: '25%', right: '25%', backgroundColor: '#f99f56', padding: '20px', border: '1px solid #ccc', zIndex: 100, overflowY: 'auto', maxHeight: '60%', borderRadius: '8px' }}>
+          <div style={{ position: 'fixed', top: '20%', left: '25%', right: '25%', backgroundColor: '#fff', boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",padding: '20px', border: '1px solid #ccc', zIndex: 100, overflowY: 'auto', maxHeight: '60%', borderRadius: '8px' }}>
             <h2 style={{ marginBottom: '20px', textAlign: 'center', fontWeight: 'bold', color: '#black' }}>Dispute Details</h2>
             <table className="contract-table" style={{ width: '100%', borderCollapse: 'collapse', color: '#black' }}>
               <thead>
@@ -516,7 +516,7 @@ export default function Contracts() {
                     <td style={{ border: '1px solid #ddd', padding: '8px' }}>{convertDisputeStatus(dispute.status)}</td>
                     <td style={{ border: '1px solid #ddd', padding: '8px' }}>
                       {convertDisputeStatus(dispute.status) !== 'Resolved' && (
-                        <input type="text" value={resolution} onChange={(e) => setResolution(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc', fontSize: '14px', backgroundColor: "#f99f56", color: "#black" }} />
+                        <input type="text" value={resolution} onChange={(e) => setResolution(e.target.value)} style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc', fontSize: '14px', backgroundColor: "#fff", color: "#black" }} />//f99f56
                       )}
                     </td>
                     <td style={{ border: '1px solid #ddd', padding: '8px' }}>
