@@ -43,7 +43,7 @@ export default function CreateListing() {
   // Function to fetch suggested price from the Flask API using Axios
   const fetchSuggestedPrice = async () => {
     try {
-      const response = await axios.post("http://process.env.AI_TARGET:5000/api/predict_price", {
+      const response = await axios.post("http://process.env.AI_TARGET/api/predict_price", {
         location: formData.location,
         property_type: formData.propertyType,
         baths: formData.bathrooms,
